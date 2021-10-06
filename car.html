@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Checkboxes sample</title>
+    </head>
+    <body>
+        <h1>SarikaManchala orders a car</h1>
+     </body>
+     <form>
+         <label for = "electric">electric</label>
+         <input type="checkbox" id = "electric" value="electric"/>
+         <br>
+         <label for = "ac">ac</label>
+         <input type="checkbox" id = "ac" value="ac"/>
+        <br>
+        <label for = "gps">gps</label>
+         <input type="checkbox" id = "gps" value="gps"/>
+         <br>
+         <br>
+         <input type="button" onclick="orderCar()" value="Order a car">
+     </form>
+     <br>
+     <p id="resultValue">Selected car details displays here </p>
+
+     <script>
+         var my_car={}
+function orderCar()
+{
+    my_car = {}
+
+if (document.getElementById("electric").checked == true) {
+    my_car['electric'] = 'true';
+} else {
+    my_car['electric'] = 'false';
+}
+
+if (document.getElementById("ac").checked == true) {
+    my_car['ac'] = 'true';
+} else {
+    my_car['ac'] = 'false';
+}
+
+if (document.getElementById("gps").checked == true) {
+    my_car['gps'] = 'true';
+} else {
+    my_car['gps'] = 'false';
+}
+document.getElementById("resultValue").innerHTML = JSON.stringify(my_car);
+            console.log(my_car);
+
+}
+
+</script>
+    
+</html>
